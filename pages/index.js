@@ -1,5 +1,6 @@
 import useSWR from "swr";
-import ArtPieces from "../components/ArtPieces";
+import ArtPieces from "./art-pieces";
+import Spotlight from "./spotlight";
 import Link from "next/link";
 
 export default function HomePage() {
@@ -8,10 +9,12 @@ export default function HomePage() {
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
 
+  const piece = data[Math.floor(Math.random() * data.length)];
   return (
-    <div>
-      <h1>Hello in Gallery App</h1>
-      <ArtPieces pieces={data} />
-    </div>
+    <>
+      <div>
+        <Spotlight artist={piece.artist} image={piece.imageSource} />
+      </div>
+    </>
   );
 }
