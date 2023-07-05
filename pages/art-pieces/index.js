@@ -26,11 +26,8 @@ export default function ArtPieces({ data, onToggleFavorite, artPiecesInfo }) {
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: black;
-  padding: 5%;
-  width: fit-content;
-  height: fit-content;
 
   &:hover {
-    color: violet;
+    color: gray;
   }
 `;

@@ -12,14 +12,17 @@ export default function ArtPieceDetails({
   onToggleFavorite,
   slug,
   isFavorite,
+  artPiecesInfo,
+  // colors,
 }) {
-  console.log(image, title, artist);
+  // console.log(colors);
   return (
     <article>
       <FavoriteButton
         onToggleFavorite={onToggleFavorite}
         slug={slug}
         isFavorite={isFavorite}
+        artPiecesInfo={artPiecesInfo}
       />
       <Image
         src={image}
@@ -29,6 +32,11 @@ export default function ArtPieceDetails({
       />
 
       <h1>"{title}"</h1>
+      {/* <ul>
+        <StyledLi colors={colors}>⚪️ </StyledLi>
+        <li>⚪️ </li>
+        <li>⚪️ </li>
+      </ul> */}
       <div>
         <p>{artist}</p>
         <p>{year}</p>
@@ -50,3 +58,7 @@ const StyledLink = styled(Link)`
     color: violet;
   }
 `;
+
+// const StyledLi = styled.li`
+//   color: {color};
+// `;

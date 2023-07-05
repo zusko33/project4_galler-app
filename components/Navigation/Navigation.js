@@ -18,15 +18,16 @@ const StyledLink = styled(Link)`
   height: fit-content;
 
   &:hover {
-    color: violet;
+    background-color: gray;
   }
 `;
 const StyledNav = styled.nav`
   position: relative;
   bottom: 0;
   width: 100vw;
-  height: 30px;
-  background: gray;
+  height: 10px;
+  background: transparent;
   color: black;
   text-align: center;
+  margin-top: 30px;
 `;
