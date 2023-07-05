@@ -6,6 +6,7 @@ export default function ArtPiecesPreview({
   onToggleFavorite,
   slug,
   isFavorite,
+  artPiecesInfo,
 }) {
   const { imageSource, name, artist, index } = data;
   return (
@@ -14,6 +15,7 @@ export default function ArtPiecesPreview({
         onToggleFavorite={onToggleFavorite}
         slug={slug}
         isFavorite={isFavorite}
+        artPiecesInfo={artPiecesInfo}
       />
       <Image
         src={imageSource}

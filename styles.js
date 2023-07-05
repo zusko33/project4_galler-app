@@ -8,23 +8,21 @@ export default createGlobalStyle`
   }
 
   body {
-    margin: 0;
-    font-family: system-ui;
-    text-align: center;
+  margin: 0;
+  font-family: system-ui;
+  height: 100vh;
   display: grid;
-  /* min-height: 100vh; */
-  grid-template-rows: auto 1fr auto;
-  max-width: 400px;
-  gap: 32px;
-  background-color: darkgray;
-  border-radius: 40px;
+  grid-template-rows: 60px 1fr 60px;
+  text-align: center;
   }
 
-  div {
-    width: 100%;
-  padding: 0 25px 0 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  header {
+    font-size: 2rem;
+  }
+
+  ul {
+ list-style: none;
+ padding: 0;
+ margin: 0;
   }
 `;

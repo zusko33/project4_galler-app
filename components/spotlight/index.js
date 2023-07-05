@@ -6,6 +6,7 @@ export default function Spotlight({
   onToggleFavorite,
   isFavorite,
   slug,
+  artPiecesInfo,
 }) {
   const randomPiece = pieces[Math.floor(Math.random() * pieces.length)];
   return (
@@ -14,6 +15,7 @@ export default function Spotlight({
         slug={slug}
         isFavorite={isFavorite}
         onToggleFavorite={onToggleFavorite}
+        artPiecesInfo={artPiecesInfo}
       />
       <Image
         src={randomPiece.imageSource}

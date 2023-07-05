@@ -16,24 +16,8 @@ export default function App({ Component, pageProps }) {
   }));
   const [artPiecesInfo, updateArtPiecesInfo] = useLocalStorageState(
     "artPiecesInfo",
-    { defaultValue: dataUpdate }
+    { defaultValue: [] }
   );
-
-  function handleToggleFavorite(slug) {
-    const info = artPiecesInfo.find((info) => info.slug === slug) ?? {
-      isFavorite: false,
-    };
-    updateArtPiecesInfo((artPiecesInfo) => {
-      const info = artPiecesInfo.find((info) => info.slug === slug);
-      console.log("info", info);
-      if (info) {
-        return artPiecesInfo.map((info) =>
-          info.slug === slug ? { ...info, isFavorite: !info.isFavorite } : info
-        );
-      }
-      return [...artPiecesInfo, { slug, isFavorite: true }];
-    });
-  }
 
   if (error) {
     return <div>Error loading...</div>;
@@ -55,8 +39,8 @@ export default function App({ Component, pageProps }) {
         <Component
           {...pageProps}
           data={dataUpdate}
-          artPiecesInfo={artPiecesInfo ? artPiecesInfo : []}
-          onToggleFavorite={handleToggleFavorite}
+          artPiecesInfo={artPiecesInfo}
+          updateArtPiecesInfo={updateArtPiecesInfo}
         />
         <Layout />
       </SWRConfig>
