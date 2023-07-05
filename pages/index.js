@@ -1,19 +1,10 @@
-import useSWR from "swr";
-import ArtPieces from "./art-pieces";
-import Spotlight from "./spotlight";
-import Link from "next/link";
+import Spotlight from "../components/spotlight";
 
-export default function HomePage() {
-  const URL = "https://example-apis.vercel.app/api/art";
-  const { data, error, isLoading } = useSWR(URL);
-  if (error) return <div>failed to load</div>;
-  if (isLoading) return <div>loading...</div>;
-
-  const piece = data[Math.floor(Math.random() * data.length)];
+export default function HomePage({ data, updateArtPieceInfo }) {
   return (
     <>
       <div>
-        <Spotlight artist={piece.artist} image={piece.imageSource} />
+        <Spotlight pieces={data} updateArtPieceInfo={updateArtPieceInfo} />
       </div>
     </>
   );
