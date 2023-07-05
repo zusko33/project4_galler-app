@@ -1,5 +1,5 @@
 import Image from "next/image";
-import FavoriteButton from "../FavoriteButton";
+import FavoriteButton from "../favButton/FavoriteButton";
 
 export default function ArtPiecesPreview({ data, onToggleFavorite }) {
   const { imageSource, name, artist, index } = data;

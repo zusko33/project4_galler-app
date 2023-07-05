@@ -28,6 +28,19 @@ export default function App({ Component, pageProps }) {
   if (!data) {
     return <div>Loading...</div>;
   }
+
+  function handleToggleFavorite(slug) {
+    updateArtPieceInfo((artPiecesInfo) => {
+      const info = artPiecesInfo.find((info) => info.slug === slug);
+      console.log(info);
+      if (info) {
+        return artPiecesInfo.map((info) =>
+          info.slug === slug ? { ...info, isFavorite: !info.isFavorite } : info
+        );
+      }
+      return [...artPiecesInfo, { slug, isFavorite: true }];
+    });
+  }
   return (
     <>
       <GlobalStyle />
@@ -42,6 +55,7 @@ export default function App({ Component, pageProps }) {
           data={data}
           artPiecesInfo={artPiecesInfo}
           updateArtPieceInfo={updateArtPieceInfo}
+          onToggleFavorite={handleToggleFavorite}
         />
         <Layout />
       </SWRConfig>
