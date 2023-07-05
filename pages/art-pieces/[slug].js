@@ -16,6 +16,7 @@ export default function ArtPieceDetailsPage({ data }) {
       artist={piece.artist}
       year={piece.year}
       genre={piece.genre}
+      colors={piece.colors}
     />
   );
 }

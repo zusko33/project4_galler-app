@@ -1,10 +1,14 @@
 import Spotlight from "../components/spotlight";
 
-export default function HomePage({ data, updateArtPieceInfo }) {
+export default function HomePage({ data, artPiecesInfo, onToggleFavorite }) {
   return (
     <>
       <div>
-        <Spotlight pieces={data} updateArtPieceInfo={updateArtPieceInfo} />
+        <Spotlight
+          pieces={data}
+          artPiecesInfo={artPiecesInfo}
+          onToggleFavorite={onToggleFavorite}
+        />
       </div>
     </>
   );
